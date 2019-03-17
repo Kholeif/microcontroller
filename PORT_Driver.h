@@ -1,14 +1,43 @@
 #ifndef PORT_DRIVER_H_
 #define PORT_DRIVER_H_
+
+
 #include "stdint.h"
 #include "C:/Keil/EE319KwareSpring2019/inc/tm4c123gh6pm.h"
-#include "STD_TYPES.h"
-#include "COMMON_MACROS.h"
-enum Port_PinDirectionType{
+
+
+/*Port Index */
+#define PORTA 0
+#define PORTB 1
+#define PORTC 2
+#define PORTD 3
+#define PORTE 4
+#define PORTF 5
+/***************************************/
+
+/*Enums*/
+typedef enum {
 	PORT_PIN_IN,PORT_PIN_OUT
-};
-void Port_Init(uint8 port_index);
-void Port_SetPinDirection(uint8 port_index,uint8 pins_mask,enum Port_PinDirectionType pins_direction);
-void Port_SetPinPullUp(uint8 port_index,uint8 pins_mas,uint8 enable);
-void Port_SetPinPullDown(uint8 port_index,uint8 pins_mas,uint8 enable);
+}Port_PinDirectionType;
+typedef enum {
+    STD_LOW,STD_HIGH
+}Dio_LevelType;
+/****************************************/
+
+/*PORT Functions Prototypes*/
+void Port_Init(uint8_t port_index);
+
+void Port_SetPinDirection(uint8_t port_index,uint8_t pins_mask,Port_PinDirectionType pins_direction);
+
+void Port_SetPinPullUp(uint8_t port_index,uint8_t pins_mask,uint8_t enable);
+
+void Port_SetPinPullDown(uint8_t port_index,uint8_t pins_mask,uint8_t enable);
+
+uint8_t DIO_ReadPort(uint8_t port_index,uint8_t pins_mask);
+
+void DIO_WritePort(uint8_t port_index,uint8_t pins_mask,Dio_LevelType pins_level);
+
+void DIO_FlipPort(uint8_t port_index,uint8_t pins_mask);
+/****************************************/
+
 #endif
