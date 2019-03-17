@@ -23,7 +23,7 @@ void LCD_displayCharacter(uint8_t data);
 void LCD_displayString(const char *Str);
 void LCD_init(void);
 void LCD_clearScreen(void);
-void LCD_goToRowColumn(uint8 row,uint8 col);
+void LCD_goToRowColumn(uint8_t row,uint8_t col);
 
 
 #endif
