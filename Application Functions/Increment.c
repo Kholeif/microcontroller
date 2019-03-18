@@ -8,12 +8,13 @@ extern unit8_t hundreds ;
 
 void Increment (void){
 		
-	int input = units + 10 * tens + 100 * hundreds ;
+	uint8_t input = units + 10 * tens + 100 * hundreds ;
 	input ++ ;
-	int spare = input ;
+	uint8_t spare = input ;
 	units =  spare  %10;
 	spare = spare / 10 ; 
 	tens = spare % 10 ;
 	spare = spare / 10 ;
-	hundreds = spare % 10 ; 	
+	hundreds = spare % 10 ;
+	Display () ;
 } 
