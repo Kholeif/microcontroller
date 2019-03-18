@@ -1,14 +1,13 @@
 #include "lcd.h"
 
+extern uint8_t units;
+extern uint8_t tens;
+extern uint8_t hundreds;
+
 void reset(void)
 {
-	LCD_goToRowColumn(0,0);
-	LCD_displayCharacter(0);
-	
-	LCD_goToRowColumn(0,1);
-	LCD_displayCharacter(0);
-	
-	LCD_goToRowColumn(0,2);
-	LCD_displayCharacter(0);
-	
+	units=0;
+	tens=0;
+	hundreds=0;
+	Display();
 }
