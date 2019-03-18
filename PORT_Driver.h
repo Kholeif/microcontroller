@@ -20,6 +20,8 @@
 #define PORTE 4
 #define PORTF 5
 /***************************************/
+/* delay function */
+void delayMs(int n);
 
 /*Enums*/
 typedef enum {
