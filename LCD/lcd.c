@@ -49,7 +49,7 @@ void LCD_displayCharacter(uint8_t data)
 	delayMs(1);                          
 
 	
-	CLEAR_BIT(LCD_CTRL_PORT,7);           //E = 1  'DISABLE LCD'
+	CLEAR_BIT(LCD_CTRL_PORT,7);           //E = 0  'DISABLE LCD'
 	delayMs(1);	
 }
 
@@ -75,3 +75,12 @@ void LCD_goToRowColumn(uint8_t row,uint8_t col)
 }
 
 
+void LCD_displayString(const char *Str)
+{
+	uint8_t i = 0;
+	while(Str[i] != '\0')
+	{
+		LCD_displayCharacter(Str[i]);
+		i++;
+	}
+}
