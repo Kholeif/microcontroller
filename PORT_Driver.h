@@ -24,6 +24,14 @@ typedef enum {
 }Dio_LevelType;
 /****************************************/
 
+
+/****delay function prototype****/
+
+void delayMs(int n);
+
+/****************************************/
+
+
 /*PORT Functions Prototypes*/
 void Port_Init(uint8_t port_index);
 
