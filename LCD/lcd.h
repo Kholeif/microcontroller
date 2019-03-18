@@ -25,5 +25,6 @@ void LCD_init(void);
 void LCD_clearScreen(void);
 void LCD_goToRowColumn(uint8_t row,uint8_t col);
 void wait(volatile uint32_t cnt);
+void Display();
 
 #endif

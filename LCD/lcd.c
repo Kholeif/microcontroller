@@ -84,3 +84,23 @@ void LCD_displayString(const char *Str)
 		i++;
 	}
 }
+
+void Display ( )
+{
+	extern unit8_t units;
+    extern unit8_t tens; 
+    extern unit8_t hundreds;
+	
+    // display units 
+    LCD_goToRowColumn(0,2);
+    LCD_displayCharacter(units);
+
+    // display tens
+    LCD_goToRowColumn(0,1);
+    LCD_displayCharacter(tens );
+    // display hundreds
+
+    LCD_goToRowColumn(0,0);
+    LCD_displayCharacter(hundreds );
+
+}

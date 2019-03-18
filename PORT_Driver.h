@@ -46,6 +46,12 @@ uint8_t DIO_ReadPort(uint8_t port_index,uint8_t pins_mask);
 void DIO_WritePort(uint8_t port_index,uint8_t pins_mask,Dio_LevelType pins_level);
 
 void DIO_FlipPort(uint8_t port_index,uint8_t pins_mask);
+
+void Increment (void);
+
+void Decrement (void);
+
+void reset(void);
 /****************************************/
 
 #endif
