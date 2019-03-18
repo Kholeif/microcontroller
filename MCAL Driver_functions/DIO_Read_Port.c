@@ -2,7 +2,7 @@
 uint8_t DIO_Read_Port(port_index,pins_mask)
 {
 	uint8_t pins_level;
-	if (port_index == 	PORTA)
+	if (port_index == PORTA)
 	{
 		pins_level = GPIO_PORTA_DATA_R & pins_mask;
 	}

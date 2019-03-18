@@ -4,6 +4,12 @@
 
 #include "stdint.h"
 #include "C:/Keil/EE319KwareSpring2019/inc/tm4c123gh6pm.h"
+/*MARCORs*/
+
+#define SET_BIT(REG,BIT) (REG|=(1<<BIT))
+#define CLEAR_BIT(REG,BIT) (REG&=(~(1<<BIT)))
+#define BIT_IS_SET(REG,BIT) ( REG & (1<<BIT) )
+#define BIT_IS_CLEAR(REG,BIT) ( !(REG & (1<<BIT)) )
 
 
 /*Port Index */
@@ -23,14 +29,6 @@ typedef enum {
     STD_LOW,STD_HIGH
 }Dio_LevelType;
 /****************************************/
-
-
-/****delay function prototype****/
-
-void delayMs(int n);
-
-/****************************************/
-
 
 /*PORT Functions Prototypes*/
 void Port_Init(uint8_t port_index);

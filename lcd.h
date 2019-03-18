@@ -4,11 +4,11 @@
 #include "PORT_Driver.h"
 
 /* LCD HardWare Pins */
-#define LCD_CTRL_PORT        GPIO_PORTA_DATA_R
-#define LCD_CTRL_PORT_DIR    GPIO_PORTA_DIR_R
-
+#define RS  5
+#define RW  6
+#define E   7
+#define LCD_CTRL_PORT        GPIO_PORTD_DATA_R
 #define LCD_DATA_PORT        GPIO_PORTB_DATA_R
-#define LCD_DATA_PORT_DIR    GPIO_PORTB_DIR_R
 
 /* LCD Commands */
 #define CLEAR_COMMAND 0x01
@@ -24,6 +24,6 @@ void LCD_displayString(const char *Str);
 void LCD_init(void);
 void LCD_clearScreen(void);
 void LCD_goToRowColumn(uint8_t row,uint8_t col);
-
+void wait(volatile uint32_t cnt);
 
 #endif
