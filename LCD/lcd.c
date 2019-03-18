@@ -1,4 +1,7 @@
 #include "lcd.h"
+extern unit8_t units;
+extern unit8_t tens; 
+extern unit8_t hundreds;
 
 void LCD_init(void)
 {
@@ -86,11 +89,7 @@ void LCD_displayString(const char *Str)
 }
 
 void Display ( )
-{
-	extern unit8_t units;
-    extern unit8_t tens; 
-    extern unit8_t hundreds;
-	
+{	
     // display units 
     LCD_goToRowColumn(0,2);
     LCD_displayCharacter(units);
