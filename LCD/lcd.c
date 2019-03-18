@@ -25,13 +25,53 @@ void LCD_sendCommand(uint8_t command)
 {
 	CLEAR_BIT(LCD_CTRL_PORT,5);
 	CLEAR_BIT(LCD_CTRL_PORT,6); 
-	delayMs(2000); 
+	delayMs(1); 
 	SET_BIT(LCD_CTRL_PORT,7); 
-	delayMs(2000); 
+	delayMs(1); 
 	LCD_DATA_PORT = command; 
-	delayMs(2000); 
+	delayMs(1); 
 	CLEAR_BIT(LCD_CTRL_PORT,7); 
-	delayMs(2000); 
+	delayMs(1); 
+}
+
+
+void LCD_displayCharacter(uint8_t data)
+{
+	
+	SET_BIT(LCD_CTRL_PORT,5);             //RS = 1 'SELECT DATA REGISTER'
+	CLEAR_BIT(LCD_CTRL_PORT,6);           //RW = 0 'FOR WRITE ON LCD'
+	delayMs(1);	                        
+	
+	SET_BIT(LCD_CTRL_PORT,7);             //E = 1  'ENABLE LCD'
+	delayMs(1);                          
+	
+	LCD_DATA_PORT = data;                 //OUTPUT DATA ON LCD
+	delayMs(1);                          
+
+	
+	CLEAR_BIT(LCD_CTRL_PORT,7);           //E = 1  'DISABLE LCD'
+	delayMs(1);	
+}
+
+void LCD_goToRowColumn(uint8_t row,uint8_t col)
+{
+	uint8_t Address;
+	
+	//first of all calculate the required address
+	switch(row)
+	{
+		case 0:
+				Address=col;
+				break;
+		case 1:
+				Address=col+0x40;
+				break;
+	}
+	
+	 //to write to a specific address in the LCD 
+	 // we need to apply the corresponding command 0x80 + Address
+	
+	LCD_sendCommand(Address | SET_CURSOR_LOCATION); 
 }
 
 
