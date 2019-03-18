@@ -2,6 +2,9 @@
 #include "C:/Keil/EE319Kware/PROJECT I/PORT_Driver.h"
 #include "C:/Keil/EE319Kware/PROJECT I/tm4c123gh6pm.h"
 #include "C:/Keil/EE319Kware/PROJECT I/lcd.h"
+extern unit8_t units ;
+extern unit8_t tens ; 
+extern unit8_t hundreds ; 
 
 void Increment (void){
 		
