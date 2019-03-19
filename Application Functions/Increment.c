@@ -1,16 +1,14 @@
-#include <stdint.h>
-#include "C:/Keil/EE319Kware/PROJECT I/PORT_Driver.h"
-#include "C:/Keil/EE319Kware/PROJECT I/tm4c123gh6pm.h"
-#include "C:/Keil/EE319Kware/PROJECT I/lcd.h"
-extern unit8_t units ;
-extern unit8_t tens ; 
-extern unit8_t hundreds ; 
+#include "C:/Users/Andrew/Desktop/gittt/LCD/lcd.h"
+
+extern uint8_t units ;
+extern uint8_t tens ; 
+extern uint8_t hundreds ; 
 
 void Increment (void){
 		
-	uint16_t input = units + 10 * tens + 100 * hundreds ;
+	uint32_t input = units + 10 * tens + 100 * hundreds ;
 	input ++ ;
-	uint16_t spare = input ;
+	uint32_t spare = input ;
 	units =  spare  %10;
 	spare = spare / 10 ; 
 	tens = spare % 10 ;

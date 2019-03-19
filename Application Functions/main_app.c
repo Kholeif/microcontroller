@@ -1,5 +1,7 @@
-#include "lcd.h"
-
+#include "C:/Users/Andrew/Desktop/gittt/LCD/lcd.h"
+ uint8_t units ;
+ uint8_t tens ; 
+ uint8_t hundreds ; 
 void SystemInit(){}
 	
 int main()
@@ -17,7 +19,7 @@ int main()
 			delayMs(20);
 			while(BIT_IS_CLEAR(GPIO_PORTD_DATA_R,0))
 			{
-				increment();
+				Increment();
 				delayMs(200);
 			}
 		}
@@ -29,7 +31,7 @@ int main()
 			delayMs(20);
 				if(BIT_IS_CLEAR(GPIO_PORTD_DATA_R,1))
 				{
-					decrement();
+					Decrement();
 				}
 				while(BIT_IS_CLEAR(GPIO_PORTD_DATA_R,1))
 				{}

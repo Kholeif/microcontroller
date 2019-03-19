@@ -1,7 +1,7 @@
 #ifndef LCD_H_
 #define LCD_H_
 
-#include "PORT_Driver.h"
+#include "C:/Users/Andrew/Desktop/gittt/PORT_Driver.h"
 
 /* LCD HardWare Pins */
 #define RS  5
@@ -25,6 +25,6 @@ void LCD_init(void);
 void LCD_clearScreen(void);
 void LCD_goToRowColumn(uint8_t row,uint8_t col);
 void wait(volatile uint32_t cnt);
-void Display();
+void Display(void);
 
 #endif

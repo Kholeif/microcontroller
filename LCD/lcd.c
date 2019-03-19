@@ -1,7 +1,7 @@
-#include "lcd.h"
-extern unit8_t units;
-extern unit8_t tens; 
-extern unit8_t hundreds;
+#include "C:/Users/Andrew/Desktop/gittt/LCD/lcd.h"
+extern uint8_t units;
+extern uint8_t tens; 
+extern uint8_t hundreds;
 
 void LCD_init(void)
 {
